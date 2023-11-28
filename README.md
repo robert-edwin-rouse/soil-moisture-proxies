@@ -163,7 +163,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/robert-edwin-rouse/soil-moisture-proxies)
+Project Link: [https://github.com/robert-edwin-rouse/soil-moisture-proxies](https://github.com/robert-edwin-rouse/soil-moisture-proxies)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
