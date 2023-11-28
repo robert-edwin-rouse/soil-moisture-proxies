@@ -77,14 +77,14 @@ This repo contains the files necessary to reproduce the machine learning model f
 
 The following libraries/tools/etc. are required for this project.
 
-- [o] python3
-    - [o] pandas
-    - [o] numpy
-    - [o] matplotlib
-- [o] cdsapi
-- [o] xarray
-- [o] pytorch
-- [o] scikit-learn
+* python3
+  * pandas
+  * numpy
+  * matplotlib
+* cdsapi
+* xarray
+* pytorch
+* scikit-learn
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
