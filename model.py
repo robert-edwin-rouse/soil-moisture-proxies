@@ -123,7 +123,7 @@ rf['Predicted'] = predicted
 maxflow = 300
 testrf = rf[pd.to_datetime(rf['Date']).dt.year.isin(yearlist)]
 for df in (testrf, rf):
-    hu.scatter_plot(maxflow, df, 'Predicted', 'Flow')
+    sf.scatter_plot(maxflow, df, 'Predicted', 'Flow')
     print('- - - - - - - - - - - - - - -')
     print('RMSE: ' + str(me.RMSE(df['Flow'], df['Predicted'])))
     print('R\N{SUPERSCRIPT TWO}: ' + str(me.R2(df['Flow'], df['Predicted'])))
