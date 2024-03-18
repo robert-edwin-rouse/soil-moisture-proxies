@@ -8,7 +8,7 @@ data handling functions from the apollo library.
 
 # Import cdsapi and create a Client instance
 import xarray as xr
-from apollo.appsci import era5 as er
+from apollo import era5 as er
 
 
 ### Specify meteorological variables and spatiotemporal ranges

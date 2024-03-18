@@ -8,7 +8,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from torch.autograd import Variable
-from apollo.appsci.hydro import streamflow as sf
+from apollo import streamflow as sf
 from apollo import metrics as me
 from apollo import mechanics as ma
 
