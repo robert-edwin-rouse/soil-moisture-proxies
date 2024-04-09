@@ -6,7 +6,6 @@ import torch
 import torch.nn as nn
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
 from torch.autograd import Variable
 from apollo import streamflow as sf
 from apollo import metrics as me
@@ -24,7 +23,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 ### Import data as dataframe and remove unclean data rows
 station = 54057
-filename = str(str(station) + '_singleregression.csv')
+filename = str(str(station) + '_lumped.csv')
 rf = pd.read_csv(filename)
 rf['Date'] = pd.to_datetime(rf['Date'], format='%Y-%m-%d').dt.date
 rf = rf.drop(rf.index[:552])
@@ -34,8 +33,8 @@ rf = rf.drop(rf.index[:552])
 days = 6
 features = ['Rain'] + ['Rain-' + f'{d+1}' for d in range(days)] + \
             ['Temperature'] + ['Temperature-' + f'{d+1}' for d in range(days)] + \
-            ['R Wind'] + ['R Wind-' + f'{d+1}' for d in range(days)] + \
-            ['RH'] + ['RH-' + f'{d+1}' for d in range(days)] + \
+            ['Resultant Windspeed'] + ['Resultant Windspeed-' + f'{d+1}' for d in range(days)] + \
+            ['Humidity'] + ['Humidity-' + f'{d+1}' for d in range(days)] + \
             ['Mu-r28','Mu-r3M','Mu-r6M','Mu-t28','Mu-t3M','Mu-t6M']
             # ['Soil Moisture ' + f'{i+1}' for i in range(4)]
 targets = ['Flow']

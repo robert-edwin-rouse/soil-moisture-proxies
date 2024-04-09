@@ -8,12 +8,14 @@ data handling functions from the apollo library.
 
 # Import cdsapi and create a Client instance
 import xarray as xr
+import pandas as pd
 from apollo import era5 as er
+from apollo import hydropoint as hp
 
 
 ### Specify meteorological variables and spatiotemporal ranges
 area = ['60.00/-8.00/48.00/4.00']
-yyyy = [str(y) for y in range(1979,1980,1)]
+yyyy = [str(y) for y in range(1979,2021,1)]
 mm = [str(m) for m in range(1,13,1)]
 dd = [str(d) for d in range(1,32,1)]
 hh = [str(t).zfill(2) + ':00' for t in range(0, 24, 1)]
@@ -30,14 +32,22 @@ for yy in yyyy:
                           area, yy, mm, dd, hh)
     rain_data = er.era5(rain_query).download()
     er.aggregate_mean(str(rain_query['file_stem']) + '.nc',
-              str(rain_query['file_stem']) + '_aggregated.nc')
-combined = xr.open_mfdataset('Rainfall_*_aggregated.nc', concat_dim='time')
-combined.to_netcdf(path='Rainfall.nc')
-
+                      str(rain_query['file_stem']) + '_aggregated.nc')
+full_rain_data = xr.open_mfdataset('Rainfall_*_aggregated.nc', concat_dim='time')
+full_rain_data.to_netcdf(path='Rainfall.nc')
 pressure_query = er.query('Pressure','reanalysis-era5-pressure-levels',
                           met[1:5], area, yyyy, mm, dd, '12:00', ['1000'])
 pressure_data = er.era5(pressure_query).download()
-
 soil_query = er.query('Soil_Moisture','reanalysis-era5-land', met[5:],
                       area, yyyy, mm, dd, '12:00')
 soil_data = er.era5(soil_query).download()
+
+
+### Produce lumped regression files per catchment
+domain_weather = xr.open_mfdataset(['Rainfall.nc',
+                                    'Pressure.nc'])
+surface_data = xr.open_dataset('Soil_Moisture.nc')
+db = pd.read_csv('Catchment_Database.csv')
+for i in range(len(db)):
+    test = hp.hydrobase(db.loc[i][0], db.loc[i][3], db.loc[i][4])
+    cache = test.output_file(domain_weather, surface_data, 28)
