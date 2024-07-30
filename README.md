@@ -63,7 +63,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](./figures/54057-P-2012.png)
 
 Streamflow Prediction Using Artificial Neural Networks &amp; Soil Moisture Proxies
 
@@ -75,14 +75,16 @@ This repo contains the files necessary to reproduce the machine learning model f
 
 ### Built With
 
-The following libraries/tools/etc. are required for this project.
-
-* python3
-  * pandas
-  * numpy
-  * matplotlib
+The apollo submodule, which contains an evolving range of environmental data science functions and some of which are used within this project, can be found at https://github.com/robert-edwin-rouse/apollo.  Both apollo and this repository rely on standard python libraries, including:
+* numpy
+* math
+* pandas
+* datetime
+* matplotlib
+The following additional libraries/packages are also required:
 * cdsapi
 * xarray
+* geopandas
 * pytorch
 * scikit-learn
 
