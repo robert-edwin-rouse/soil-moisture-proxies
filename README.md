@@ -18,10 +18,10 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">Streamflow Prediction Using Artificial Neural Networks &amp; Soil Moisture Proxies
+</h3>
 
   <p align="center">
-    project_description
     <br />
     <a href="https://github.com/robert-edwin-rouse/soil-moisture-proxies"><strong>Explore the docs »</strong></a>
     <br />
@@ -65,15 +65,19 @@
 
 [![Product Name Screen Shot][product-screenshot]](./figures/54057-P-2012.png)
 
-Streamflow Prediction Using Artificial Neural Networks &amp; Soil Moisture Proxies
+This codebase accompanies the Environmental Data Science paper 'Streamflow Prediction Using Artificial Neural Networks &amp; Soil Moisture Proxies'.  It includes the code to download the requisite ERA5 data from the ECMWF Copernicus Data Store, the code to run the model and reproduce all of the results, and reproduce the main figures from the paper.
 
-This repo contains the files necessary to reproduce the machine learning model for the paper entitled 'Streamflow Prediction Using Artificial Neural Networks &amp; Soil Moisture Proxies'; instructions, in terms of prerequisites and accessing the required data, are included below.
+In order to maximise flexibility, core functions are shared between this project and related projects through the apollo environmental data science submodule; the version required to reproduce the results in the paper is included but may not be the most up to date version.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
+<!-- GETTING STARTED -->
+## Getting Started
 
-### Built With
+The catchment database file included in this repository has been left underpopulated, as the data to fully populate it is owned by the Centre for Ecology and Hydrology; this is open source data that can be accessed through the National River Flow Archive [https://](https://nrfa.ceh.ac.uk/data/search).  Downloading the data from the ECMWF CDS requires the creation of an API key, instructions for which can be found on the following page [https://](https://cds.climate.copernicus.eu/api-how-to).
+
+### Prerequisites
 
 The apollo submodule, which contains an evolving range of environmental data science functions and some of which are used within this project, can be found at https://github.com/robert-edwin-rouse/apollo.  Both apollo and this repository rely on standard python libraries, including:
   * numpy
@@ -90,17 +94,6 @@ The following additional libraries/packages are also required:
   * scikit-learn
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- GETTING STARTED -->
-## Getting Started
-
-Placeholder.
-
-### Prerequisites
-
-Placeholder.
 
 ### Installation
 
@@ -131,9 +124,8 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Add ERA5 database compiler
-- [ ] Add Changelog
-- [ ] Update Readme 
+- [ ] Simplify the model script
+- [ ] Add code to reproduce violin plots
 
 See the [open issues](https://github.com/robert-edwin-rouse/soil-moisture-proxies/issues) for a full list of proposed features (and known issues).
 
