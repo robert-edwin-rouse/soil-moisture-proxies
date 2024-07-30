@@ -46,7 +46,7 @@ yspace = ma.featurelocator(rf, targets)
 
 
 ###Test/Train data split by years
-yearlist = [2010+i for i in range(11)]
+yearlist = [2009+i for i in range(11)]
 rftrain = rf[~pd.to_datetime(rf['Date']).dt.year.isin(yearlist)]
 
 
@@ -123,12 +123,16 @@ z = torch.from_numpy(Z).to(device)
 predicted = net(z.float()).data.cpu().numpy()
 rf['Predicted'] = predicted
 maxflow = 300
-testrf = rf[pd.to_datetime(rf['Date']).dt.year.isin(yearlist)]
+# valrf = rf[pd.to_datetime(rf['Date']).dt.year.isin(2009)]
+testrf = rf[pd.to_datetime(rf['Date']).dt.year.isin(yearlist[1:])]
 for df in (testrf, rf):
     sf.scatter_plot(maxflow, df, 'Predicted', 'Flow')
     print('- - - - - - - - - - - - - - -')
     print('RMSE: ' + str(me.RMSE(df['Flow'], df['Predicted'])))
-    print('R\N{SUPERSCRIPT TWO}: ' + str(me.R2(df['Flow'], df['Predicted'])))
+    print('MPRE: ' + str(me.MPRE(df['Flow'], df['Predicted'])))
+    print('RB: ' + str(me.RB(df['Flow'], df['Predicted'])))    
+    print('NSE: ' + str(me.R2(df['Flow'], df['Predicted'])))
+    print('KGE: ' + str(me.KGE(df['Flow'], df['Predicted'])))
 sf.year_plot(maxflow, rf, 'Predicted', 'Flow', 2007)
 sf.year_plot(maxflow, rf, 'Predicted', 'Flow', 2012)
 
