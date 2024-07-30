@@ -192,4 +192,4 @@ Project Link: [https://github.com/robert-edwin-rouse/soil-moisture-proxies](http
 [issues-url]: https://github.com/robert-edwin-rouse/soil-moisture-proxies/issues
 [license-shield]: https://img.shields.io/github/license/robert-edwin-rouse/soil-moisture-proxies.svg?style=for-the-badge
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: ./figures/54057-P-2012.png
