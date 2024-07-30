@@ -110,7 +110,7 @@ The following additional libraries/packages are also required:
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Provided the catchment database csv file has been populated with data for the target catchments, the initial combined meteorology and streamflow files can be produced by running the ```sh assembly.py``` script.  The artificial neural network can then be trained and the results on the test set, as partitioned in the paper, produced by running ```sh model.py```.  Note that the validation set has been commented out within the code as it was used for model development only.  Figures are generated from the same script along with the sensitivity analysis but must be saved manually.
+Provided the catchment database csv file has been populated with data for the target catchments, the initial combined meteorology and streamflow files can be produced by running the ```assembly.py``` script.  The artificial neural network can then be trained and the results on the test set, as partitioned in the paper, produced by running ```model.py```.  Note that the validation set has been commented out within the code as it was used for model development only.  Figures are generated from the same script along with the sensitivity analysis but must be saved manually.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
