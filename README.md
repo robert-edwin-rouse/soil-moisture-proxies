@@ -75,11 +75,11 @@ In order to maximise flexibility, core functions are shared between this project
 <!-- GETTING STARTED -->
 ## Getting Started
 
-The catchment database file included in this repository has been left underpopulated, as the data to fully populate it is owned by the Centre for Ecology and Hydrology; this is open source data that can be accessed through the National River Flow Archive [https://](https://nrfa.ceh.ac.uk/data/search).  Downloading the data from the ECMWF CDS requires the creation of an API key, instructions for which can be found on the following page [https://](https://cds.climate.copernicus.eu/api-how-to).
+The catchment database file included in this repository has been left underpopulated, as the data to fully populate it is owned by the Centre for Ecology and Hydrology; this is open source data that can be accessed through the National River Flow Archive [https://nrfa.ceh.ac.uk/data/search].  Downloading the data from the ECMWF CDS requires the creation of an API key, instructions for which can be found on the following page [https://cds.climate.copernicus.eu/api-how-to].
 
 ### Prerequisites
 
-The apollo submodule, which contains an evolving range of environmental data science functions and some of which are used within this project, can be found at https://github.com/robert-edwin-rouse/apollo.  Both apollo and this repository rely on standard python libraries, including:
+The apollo submodule, which contains an evolving range of environmental data science functions and some of which are used within this project, can be found at [https://github.com/robert-edwin-rouse/apollo].  Both apollo and this repository rely on standard python libraries, including:
   * numpy
   * math
   * pandas
